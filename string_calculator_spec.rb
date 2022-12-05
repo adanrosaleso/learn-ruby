@@ -17,14 +17,14 @@ describe StringCalculator do
     expect(result).to eq(1)
   end
 
-  it "can hanlde an unknown amount of numbers" do
+  it "can handle an unknown amount of numbers" do
     result = calculator.add("1,2,3,4,5,6")
     expect(result).to eq(21)
     result = calculator.add("1,2,3")
     expect(result).to eq(6)
   end
 
-  it "can hanlde new lines between numbers (instead of commas)" do
+  it "can handle new lines between numbers (instead of commas)" do
     result = calculator.add("1\n2,3")
     expect(result).to eq(6)
   end
@@ -34,7 +34,7 @@ describe StringCalculator do
     expect(result).to eq(11)
   end
 
-  it "will throw an exception 'negatives not allowed' if a negative number is pressent" do
+  it "will throw an exception 'negatives not allowed' if a negative number is present" do
     expect { calculator.add("-4")}. to raise_error.with_message(/Negatives not allowed./)
     #if there are multiple negatives, show all of them in the exception message.
     expect { calculator.add("1,-6,3,-4,5")}. to raise_error.with_message(/-6, -4/)
